@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Typography } from '@mui/material';
 import {useHistory, useNavigate} from 'react-router-dom';
 import './App.css'; // Import your CSS
-import backgroundImage from '../Assets/home_background.png'; // Correct path
+import backgroundImage from '../assets/home_background.png'; // Correct path
 
 function App() {
     const navigate = useNavigate();
