@@ -1,0 +1,50 @@
+/* Define fonts and colors */
+:root {
+  --font-title: Road Rage, sans-serif;
+  --font-body: Road Rage, sans-serif;
+  --font-weight: 400;
+  --font-style: normal;
+  --primary-color: #00000;
+}
+
+/* Apply global styles */
+body {
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  background-color: var(--primary-color);
+  color: white; /* Text color */
+}
+
+/* Title styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  margin: 0;
+}
+
+/* Header styles */
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+  padding: 20px;
+}
+
+
+.app-background {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: moveBackground 10s linear infinite; /* Optional for slight movement */
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
