@@ -1,23 +1,23 @@
 /* Define fonts and colors */
 :root {
-  --font-title: Road Rage, sans-serif;
-  --font-body: Road Rage, sans-serif;
+  --font-title: 'Road Rage', sans-serif;
+  --font-body: 'Road Rage', sans-serif;
   --font-weight: 400;
   --font-style: normal;
-  --primary-color: #00000;
+  --primary-color: #000000;
 }
 
 /* Apply global styles */
 body {
   margin: 0;
   font-family: var(--font-body), sans-serif;
-  background-color: var(--primary-color);
-  color: white; /* Text color */
+  color: black; /* Text color */
 }
 
 /* Title styles */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-title);
+  font-family: var(--font-title), sans-serif;
+  color: black;
   margin: 0;
 }
 
@@ -31,8 +31,24 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
 }
 
+@keyframes ripple {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
 
 .app-background {
+  background-image: url('./assets/home_background.png'); /* Your background image */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -40,11 +56,5 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: moveBackground 10s linear infinite; /* Optional for slight movement */
-}
-
-@keyframes moveBackground {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 0%; }
-  100% { background-position: 0% 0%; }
+  animation: ripple 10s ease-in-out infinite; /* Adjust duration for speed */
 }

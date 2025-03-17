@@ -11,3 +11,105 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-image: ;
+}
+
+.project-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  padding: 20px;
+}
+
+.projects-title {
+  background-color: rgba(243, 121, 68, 0.9); /* Dark orange background */
+  color: black;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit maximum width */
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit maximum width */
+  gap: 20px; /* Space between filter and grid */
+}
+
+.filter-bar {
+  background-color: rgba(243, 101, 48, 0.7);
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 20px;
+  width: 250px; /* Fixed width for filter box */
+}
+
+.filter-title {
+  background-color: rgba(243, 101, 48, 0.7); /* Dark orange for the filter title */
+  color: black;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.language-title {
+  background-color: rgba(243, 101, 48, 0.7); /* Dark orange for the language title */
+  color: Black;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Two columns on larger screens */
+  gap: 20px; /* Space between cards */
+  flex: 1; /* Allow the grid to take remaining space */
+}
+
+.project-card {
+  background-color: #fff; /* White background for project cards */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%; /* Responsive image */
+  border-radius: 8px; /* Rounded corners for the image */
+  margin-bottom: 10px; /* Space between image and title */
+}
+
+.project-tags {
+  margin-top: 10px;
+  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(243, 121, 68, 0.9);
+  color: black;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px 0;
+}
