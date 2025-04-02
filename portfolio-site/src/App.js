@@ -3,12 +3,16 @@ import { Box, Button, Typography } from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import './App.css'; // Import your CSS
 import backgroundImage from './assets/home_background.png'; // Correct path
+import mailboxImage from './assets/mailbox.png'; // Update the path as necessary
 
 function App() {
     const navigate = useNavigate();
 
     const handlePortfolioRedirect = () => {
         navigate('/Projects'); // Update this to your PortfolioPage route
+    };
+    const handleContactRedirect = () => {
+        navigate('/Contact'); // Update this to your ContactPage route
     };
 
     return (
@@ -107,6 +111,32 @@ function App() {
                         </Typography>
                     </Button>
                 </Box>
+                <Button
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        position: 'fixed',
+                        bottom: '80px', // Push up the box by 75 pixels
+                        left: '20px',
+                        cursor: 'pointer',
+                    }}
+                    onClick={handleContactRedirect}
+                >
+                    <Box
+                        style={{
+                            backgroundColor: 'rgba(243, 121, 68)', // Orange background
+                            borderRadius: '15px', // Rounded edges
+                            padding: '3px 3px', // Padding around the text
+                            // Space between title and image
+                        }}
+                    >
+                        <Typography variant="h6" style={{ color: 'black' }} fontFamily={'Road Rage'}>
+                            Contact
+                        </Typography>
+                    </Box>
+                    <img src={mailboxImage} alt="Contact" style={{ width: '100px', height: '100px' }} />
+                </Button>
             </div>
         </div>
     );

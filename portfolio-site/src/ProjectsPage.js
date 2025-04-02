@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './index.css';
-import backgroundImage from "./assets/pages_background.png";
+import backgroundImage from "./assets/background2.webp";
 import MnistPic from "./assets/mnist_pic.png";
 import shellProj from "./assets/shell_code.png";
 import HKSite from "./assets/HKsite.png";
+import portPic from "./assets/portfolio_pic.png";
+import backArrow from "./assets/back_arrow.png";
 
 function ProjectPage() {
     // State to manage filter selections
@@ -49,6 +51,14 @@ function ProjectPage() {
             image: HKSite, // Path to project image
             tags: ['School', 'Typescript', 'Collaborative', 'Git/GitHub', 'React'],
             description: 'A collaborative website worked on with another student for a sponsor during a study abroad project..',
+            githubLink: 'https://github.com/VoDylan/beetalesproj',
+        },
+        {
+            id: 4,
+            title: 'Portfolio Site',
+            image: portPic, // Path to project image
+            tags: ['Personal', 'Javascript', 'HTML/CSS', 'Git/GitHub', 'React', 'NodeJS'],
+            description: 'A website made to display all my projects.',
             githubLink: 'https://github.com/VoDylan/beetalesproj',
         },
         // Add more projects here with different properties
@@ -135,7 +145,6 @@ function ProjectPage() {
                     </div>
                 </div>
                 <div className="projects-grid">
-                    {/* Map through the filtered projects to display each card */}
                     {filteredProjects.map(project => (
                         <div className="project-card" key={project.id}>
                             <h2>{project.title}</h2>
@@ -146,7 +155,6 @@ function ProjectPage() {
                                 </div>
                             </a>
                             <div className="project-tags">
-                                {/* Display each tag associated with the project */}
                                 {project.tags.map(tag => (
                                     <span className="tag" key={tag}>{tag}</span>
                                 ))}
@@ -155,6 +163,9 @@ function ProjectPage() {
                     ))}
                 </div>
             </div>
+            <a href="/" className="back-arrow" aria-label="Back to Home">
+                <img src={backArrow} alt="Back"  className="rotated"/>
+            </a>
         </div>
         </div>
     );

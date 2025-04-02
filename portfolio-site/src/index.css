@@ -58,7 +58,8 @@ body, html {
   border: 1px solid #000000;
   border-radius: 8px;
   padding: 20px;
-  width: 250px; /* Fixed width for filter box */
+  width: 250px;
+  height: fit-content/* Fixed width for filter box */
 }
 
 .filter-title {
@@ -78,24 +79,33 @@ body, html {
 }
 
 .projects-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Two columns on larger screens */
   gap: 20px; /* Space between cards */
   flex: 1; /* Allow the grid to take remaining space */
 }
 
+
+
 .project-card {
-  background-color: #fff; /* White background for project cards */
-  border: 1px solid #ddd;
+  background-color: rgba(243, 141, 24, 0.8); /* White background for project cards */
+  border: 1px solid #000000;
   border-radius: 8px;
   padding: 10px;
   text-align: center;
+  position: relative; /* Position relative for absolute child elements */
+  flex: 1 1 calc(50% - 16px); /* 4 cards per row with some spacing */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
+
 
 .project-image {
   width: 100%; /* Responsive image */
   border-radius: 8px; /* Rounded corners for the image */
-  margin-bottom: 10px; /* Space between image and title */
+  margin-bottom: 10px;
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Space between image and title */
 }
 
 .project-tags {
@@ -113,3 +123,67 @@ body, html {
   padding: 5px 10px;
   margin: 5px 0;
 }
+
+.description-popup {
+  position: absolute; /* Position over the image */
+  bottom: 0; /* Align to bottom */
+  left: 0; /* Align to left */
+  right: 0; /* Align to right */
+  background-color: rgba(34, 34, 34, 0.8); /* Semi-opaque grey */
+  color: white; /* Text color */
+  padding: 10px; /* Padding around the text */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+}
+.image-container {
+  position: relative; /* Make the container relative */
+  overflow: hidden; /* Hide overflow */
+  border-radius: 8px; /* Rounded corners */
+}
+.image-container:hover .description-popup {
+  opacity: 1; /* Show popup on hover */
+}
+
+.project-background {
+  background-image: url('./assets/pages_background.png'); /* Ensure the path is correct */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+  min-height: 100vh; /* Ensure it takes at least the full height of the viewport */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+}
+
+.contact-background {
+  background-image: url('./assets/pages_background.png'); /* Ensure the path is correct */
+  background-size: cover; /* Cover the entire area */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+  min-height: 100vh; /* Ensure it takes at least the full height of the viewport */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Arrange children in a column */
+}
+
+.back-arrow {
+  position: fixed; /* Fix position relative to the viewport */
+  bottom: 10px; /* Distance from the bottom */
+  left: 10px; /* Distance from the left */
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.back-arrow img {
+  width: 80px; /* Adjust size as necessary */
+  height: auto; /* Maintain aspect ratio */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.rotated {
+  transform: rotate(180deg); /* Rotate the image 180 degrees */
+  transition: transform 0.3s ease; /* Optional: smooth transition */
+}
+
+
+
+
+
+
